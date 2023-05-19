@@ -48,12 +48,13 @@ namespace ECommerceAPI.Persistance.Repositories
 
         public Task<int> SaveAsync()
         {
-            throw new NotImplementedException();
+            return _context.SaveChangesAsync();
         }
 
         public bool Update(T model)
         {
             EntityEntry entityEntry = Table.Update(model);
+            return (entityEntry != null);
         }
     }
 }
