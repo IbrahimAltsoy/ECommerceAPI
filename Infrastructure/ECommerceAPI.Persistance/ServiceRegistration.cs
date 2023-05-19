@@ -1,6 +1,7 @@
 ﻿using ECommerceAPI.Persistance.Contexts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace ECommerceAPI.Persistance
 {
@@ -8,7 +9,8 @@ namespace ECommerceAPI.Persistance
     {
         public static void AddPersistanceServices(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddDbContext<ECommerceDbContext>(options=> options.UseSqlServer("Server=DESKTOP-J2UHGTK;Database=ECommerceDb;Trusted_Connection=True;TrustServerCertificate=True"));
+            serviceCollection.AddDbContext<ECommerceDbContext>(options => options.UseSqlServer(Configiration.ConnectingString));
+
         }
     }
 }
