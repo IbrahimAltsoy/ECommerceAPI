@@ -9,5 +9,8 @@ namespace ECommerceAPI.Domain.Entities
         public int Stock { get; set; }
         public long Price { get; set; }
 
+
+        public ICollection<Order> Orders { get; set; } // birden cok siparisi olabilir coka cok iliskisi 
+
     }
 }

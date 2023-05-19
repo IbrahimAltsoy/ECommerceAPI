@@ -1,6 +1,4 @@
-﻿using ECommerceAPI.Application.Abstractions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerceAPI.Api.Controllers
 {
@@ -8,17 +6,14 @@ namespace ECommerceAPI.Api.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductService productService;
+       
 
-        public ProductsController(IProductService productService)
-        {
-            this.productService = productService;
-        }
+       
         [HttpGet]
         public IActionResult GetProducts()
         {
-            var model = productService.GetAllProducts();
-            return Ok(model);
+            
+            return Ok();
         }
     }
 }
