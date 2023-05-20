@@ -6,6 +6,8 @@ namespace ECommerceAPI.Application.Repositories.Products
 {
     public interface IProductReadRepository : IReadRepository<Product>
     {
-    {
+
     }
+   
+    
 }
