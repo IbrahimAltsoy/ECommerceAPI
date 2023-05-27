@@ -30,7 +30,7 @@ namespace ECommerceAPI.Api.Controllers
         {
             Order order = await _orderReadRepository.GetByIdAsync("affdf1c4-d713-4fcf-00ae-08db59843d10");
             order.Description = "Merhaba";
-            order.Address = "Miami";
+            order.Address = "West Palm";
            await _orderWriteRepository.SaveAsync();
             
            

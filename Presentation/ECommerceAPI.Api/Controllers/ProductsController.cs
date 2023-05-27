@@ -30,15 +30,15 @@ namespace ECommerceAPI.Api.Controllers
             //    new(){Id = Guid.NewGuid(), Name = "Product-10", CreatedDate = DateTime.Now, Price = 500, Stock= 45},
             //});
             //await productWriteRepository.SaveAsync();
-            //// Product p = await _productReadRepository.GetByIdAsync("6550fe44-8cbc-4357-aca4-e27039120d50");
-            //// Product p = await productReadRepository.GetByIdAsync("6550fe44-8cbc-4357-aca4-e27039120d50", false); yapacak olursak takibe alinmasin demis oluyoruz ve degisikligi yapmamis olur 
-            ////p.Name = "Monitor";
-            ////await _productWriteRepository.SaveAsync();
-            await _productWriteRepository.CreateAsync(new()
-            {
-                Name = "Table",Price= 1.500F, Stock=50
-            });
-            await _productWriteRepository.SaveAsync();
+            //Product p = await _productReadRepository.GetByIdAsync("6550fe44-8cbc-4357-aca4-e27039120d50");
+            ////Product p = await productReadRepository.GetByIdAsync("6550fe44-8cbc-4357-aca4-e27039120d50", false); yapacak olursak takibe alinmasin demis oluyoruz ve degisikligi yapmamis olur
+            //p.Name = "Monitor";
+            //await _productWriteRepository.SaveAsync();
+            //await _productWriteRepository.CreateAsync(new()
+            //{
+            //    Name = "Table",Price= 1.500F, Stock=50
+            //});
+            //await _productWriteRepository.SaveAsync();
         }
         [HttpGet("{id}")]
          public async Task<IActionResult> GetById(string id)
