@@ -24,7 +24,8 @@ namespace ECommerceAPI.Persistance.Contexts
                 _ = model.State switch
                 {
                     EntityState.Added => model.Entity.CreatedDate = DateTime.Now,
-                    EntityState.Modified => model.Entity.UpdateDate =DateTime.Now
+                    EntityState.Modified => model.Entity.UpdateDate =DateTime.Now,
+                    _ => DateTime.Now
 
                 };
             }

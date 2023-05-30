@@ -58,6 +58,7 @@ namespace ECommerceAPI.Api.Controllers
         {
             await _productWriteRepository.RemoveAsync(id);
             await _productWriteRepository.SaveAsync();
+            int a = 5;
             return Ok();
         }
 
