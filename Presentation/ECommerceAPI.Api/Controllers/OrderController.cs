@@ -21,7 +21,9 @@ namespace ECommerceAPI.Api.Controllers
         //{
         //    await _orderWriteRepository.CreateAsync(new()
         //    {
-        //        Address = "West PalmBeach", Description = "Tatil koyu", CustomerId= Guid.Parse("1249860a-c34f-4008-af70-d47b331a1b9d")
+        //        Address = "West PalmBeach",
+        //        Description = "Tatil koyu",
+        //        CustomerId = Guid.Parse("1249860a-c34f-4008-af70-d47b331a1b9d")
         //    });
         //    await _orderWriteRepository.SaveAsync();
         //}
