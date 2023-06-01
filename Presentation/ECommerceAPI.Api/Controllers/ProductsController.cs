@@ -33,10 +33,13 @@ namespace ECommerceAPI.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(VM_Create_Product model)
         {
-            await _productWriteRepository.CreateAsync(new(){
+
+            await _productWriteRepository.CreateAsync(new()
+            {
                 Name = model.Name,
-                Stock  = model.Stock,
-                Price = model.Price
+                Stock = model.Stock,
+                Price = model.Price,
+
             });
             await _productWriteRepository.SaveAsync();
             return StatusCode((int)HttpStatusCode.Created);
@@ -58,7 +61,7 @@ namespace ECommerceAPI.Api.Controllers
         {
             await _productWriteRepository.RemoveAsync(id);
             await _productWriteRepository.SaveAsync();
-            int a = 5;
+           
             return Ok();
         }
 

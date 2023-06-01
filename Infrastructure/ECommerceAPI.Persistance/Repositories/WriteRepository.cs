@@ -27,27 +27,7 @@ namespace ECommerceAPI.Persistance.Repositories
         {
             await Table.AddRangeAsync(models);
             return true;
-        }
-
-        //
-        //public async Task<bool> AddAsync(T model)
-        //{
-        //    EntityEntry<T> entityEntry = await Table.AddAsync(model);
-        //    return entityEntry.State == EntityState.Added;
-        //}
-
-        //public async Task<bool> AddRangeAsync(List<T> datas)
-        //{
-        //    await Table.AddRangeAsync(datas);
-        //    return true;
-        //}
-
-
-
-
-
-
-        //
+        }      
 
 
         public bool Remove(T model)
