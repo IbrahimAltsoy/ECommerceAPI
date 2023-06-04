@@ -1,4 +1,5 @@
 ﻿using ECommerceAPI.Application.Repositories.Products;
+using ECommerceAPI.Application.RequestParameters;
 using ECommerceAPI.Application.ViewModels.Products;
 using ECommerceAPI.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +20,20 @@ namespace ECommerceAPI.Api.Controllers
             this._productWriteRepository = productWriteRepository;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery]Pagination pagination)
         {
-            return Ok(_productReadRepository.GetAll());
+            var products = _productReadRepository.GetAll().Skip(pagination.Size * pagination.Page).Take(pagination.Size).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Stock,
+                p.Price,
+                p.CreatedDate,
+                p.UpdateDate
+
+
+            }).ToList();
+            return Ok(products);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
