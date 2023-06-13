@@ -1,4 +1,5 @@
 using ECommerceAPI.Application.Validators.Product;
+using ECommerceAPI.Infrastructure;
 using ECommerceAPI.Infrastructure.Filter;
 using ECommerceAPI.Persistance;
 using FluentValidation.AspNetCore;
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddPersistanceServices();
+builder.Services.AddInfrastructureServices();
 // Cors islemleri icin actigimiz alandir. Simdiki haliyle asagidan gelen adreslerden istegi kabul et dedik
 builder.Services.AddCors(options=> options.AddDefaultPolicy(policy=>
 policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200")));// client projesi ile iliskilendirdigimiz alandir.
@@ -31,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseStaticFiles();// wwwrot klasorunu kullanabilmek icin bu fonksiyonun eklenmesi gerekiyor
 app.UseCors();
 app.UseHttpsRedirection();
 
