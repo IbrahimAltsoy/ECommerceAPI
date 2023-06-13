@@ -1,9 +1,6 @@
-﻿using ECommerceAPI.Application.Repositories;
-using ECommerceAPI.Application.Repositories.Customers;
+﻿using ECommerceAPI.Application.Repositories.Customers;
 using ECommerceAPI.Domain.Entities;
 using ECommerceAPI.Persistance.Contexts;
-using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace ECommerceAPI.Persistance.Repositories.Customers
 {

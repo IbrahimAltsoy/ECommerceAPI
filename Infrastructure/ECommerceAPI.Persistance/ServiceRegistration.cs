@@ -9,6 +9,12 @@ using ECommerceAPI.Persistance.Repositories.Products;
 using ECommerceAPI.Application.Repositories.Customers;
 using ECommerceAPI.Persistance.Repositories.Customers;
 using ECommerceAPI.Application.Repositories;
+using ECommerceAPI.Application.Repositories.File;
+using ECommerceAPI.Persistance.Repositories.Files;
+using ECommerceAPI.Persistance.Repositories.ProductImagesFile;
+using ECommerceAPI.Application.Repositories.ProductImageFile;
+using ECommerceAPI.Application.Repositories.Invoice;
+using ECommerceAPI.Persistance.Repositories.Invoices;
 
 namespace ECommerceAPI.Persistance
 {
@@ -23,7 +29,17 @@ namespace ECommerceAPI.Persistance
             serviceCollection.AddScoped<IProductReadRepository, ProductReadRepository>();   
             serviceCollection.AddScoped<IProductWriteRepository, ProductWriteRepository>();   
             serviceCollection.AddScoped<ICustomerReadRepository, CustomerReadRepository>();   
-            serviceCollection.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();   
+            serviceCollection.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();             
+            serviceCollection.AddScoped<IFileReadRepository, FileReadRepository>();   
+            serviceCollection.AddScoped<IFileWriteRepository, FileWriteRepository>();   
+            serviceCollection.AddScoped<IProductImageFileReadRepository, ProductimagesFileReadRepository>();   
+            serviceCollection.AddScoped<IProductImagesFileWriteRepository, ProductimagesFileWriteRepository>(); 
+            serviceCollection.AddScoped<IInvoiceFilessWriteRepository, InvoicesWriteRepository>(); 
+            serviceCollection.AddScoped<IInvoiceFilesWriteRepository, InvoicesReadRepository>(); 
+            
+            
+            
+            
 
         }
     }
